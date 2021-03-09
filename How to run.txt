@@ -1,0 +1,76 @@
+ng build za frontend
+node server za backend
+
+port 8081
+
+
+Dump baze prepisan iz robo 3t softwarea:
+
+Payments:
+{
+    "_id" : ObjectId("60269c731901b711b87d8cd0"),
+    "userIdFrom" : "602697cfddb1a24568cb7a9a",
+    "userIdTo" : "6026984db419b30814117064",
+    "date" : ISODate("2021-02-12T15:19:44.260Z"),
+    "amount" : 420
+}
+,
+{
+    "_id" : ObjectId("60269ca11901b711b87d8cd1"),
+    "userIdFrom" : "602697cfddb1a24568cb7a9a",
+    "userIdTo" : "6026985fb419b30814117065",
+    "date" : ISODate("2021-02-12T15:20:01.312Z"),
+    "amount" : 100
+}
+,
+{
+    "_id" : ObjectId("60269cd51901b711b87d8cd2"),
+    "userIdFrom" : "6026984db419b30814117064",
+    "userIdTo" : "602697cfddb1a24568cb7a9a",
+    "date" : ISODate("2021-02-12T15:20:53.575Z"),
+    "amount" : 512
+}
+,
+{
+    "_id" : ObjectId("60269d021901b711b87d8cd4"),
+    "userIdFrom" : "6026984db419b30814117064",
+    "userIdTo" : "6026985fb419b30814117065",
+    "date" : ISODate("2021-02-12T15:21:38.231Z"),
+    "amount" : 1
+}
+,
+{
+    "_id" : ObjectId("60269d141901b711b87d8cd5"),
+    "userIdFrom" : "6026985fb419b30814117065",
+    "userIdTo" : "602697cfddb1a24568cb7a9a",
+    "date" : ISODate("2021-02-12T15:21:56.680Z"),
+    "amount" : 666
+}
+
+Users: 
+{
+    "_id" : ObjectId("602697cfddb1a24568cb7a9a"),
+    "username" : "Lima",
+    "password" : "$2a$10$780AfOvfbfbgkq71zDMJtOAPz4daaftV73p76wR4eFXzWyvXZ6JLa",
+    "email" : "lima@gmail.com",
+    "balance" : 1000,
+    "level" : 2
+}
+,
+{
+    "_id" : ObjectId("6026984db419b30814117064"),
+    "username" : "Edi",
+    "password" : "$2a$10$d0g8Frcci0bqT5MlHz6ozuTQt5izjY/L32yrK.foLCVTYc0Dm.fHK",
+    "email" : "edi@gmail.com",
+    "balance" : 120,
+    "level" : 1
+}
+,
+{
+    "_id" : ObjectId("6026985fb419b30814117065"),
+    "username" : "btot",
+    "password" : "$2a$10$3co/zDBcKG6Zw57PeqJJZue4dA1TbAZxzfY3SPMizRdRUrfs8hDxC",
+    "email" : "btot@gmail.com",
+    "balance" : 3000,
+    "level" : 1
+}

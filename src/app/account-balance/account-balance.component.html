@@ -1,0 +1,21 @@
+<div class="container">
+  <p *ngIf="user != null || user != undefined">Welcome {{user.username}} your current balance is {{user.balance}}$</p>
+
+  <h2 style="text-align: center">Last Payments:</h2>
+  <div class="jumbotron">
+    <div *ngFor="let pay of filteredPayment">
+      <h5 style="text-align: center">Payment to {{pay.userTo.username}}:</h5>
+      <p>{{pay.date | date:'dd.MM.yyyy.'}} => {{pay.amount}}$</p>
+      <br>
+    </div>
+  </div>
+
+  <h2 style="text-align: center">Last Payouts:</h2>
+  <div class="jumbotron">
+    <div *ngFor="let pay of filteredPayout">
+      <h5 style="text-align: center">Payout from {{pay.userFrom.username}}:</h5>
+      <p>{{pay.date | date:'dd.MM.yyyy.'}} => {{pay.amount}}$</p>
+    </div>
+  </div>
+
+</div>

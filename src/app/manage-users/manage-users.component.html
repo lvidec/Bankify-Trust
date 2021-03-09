@@ -1,0 +1,18 @@
+<div class="container">
+  <p>Hello SuperUser!</p>
+
+  <h2 style="text-align: center">All Users:</h2>
+  <div class="jumbotron">
+    <div *ngFor="let user of users">
+      <h2 style="text-align: center">{{user.username}}:</h2>
+      <h6>ID: {{user._id}}</h6>
+      <h6>Email: {{user.email}}</h6>
+      <h6>Password: {{user.password}}</h6>
+      <h6>Balance: {{user.balance}}</h6>
+      <h6>Level: {{user.level}}</h6>
+      <button class="btn btn-danger" (click)="deleteUser(user)">Delete {{user.username}}</button>
+      <br>
+    </div>
+  </div>
+
+</div>

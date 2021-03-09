@@ -1,0 +1,45 @@
+<div class="container">
+  <p>Welcome {{user.username}} your current balance is {{user.balance}}$</p>
+  <h2 style="text-align: center">All Payments:</h2>
+  <div class="jumbotron">
+    <div *ngFor="let pay of payments | filterPaymentsByUser: user">
+<!--    <div *ngFor="let pay of payments">-->
+      <h5 *ngIf="getRoute('/payment')" style="text-align: center">Payment to {{pay.userTo.username}}:</h5>
+      <h5 *ngIf="getRoute('/payout')" style="text-align: center">Payout from {{pay.userFrom.username}}:</h5>
+      <p>{{pay.date | date:'short'}} => {{pay.amount}}$</p>
+      <button (click)="onEdit(pay)" class="btn btn-warning odmakni-desno">Edit a payment</button>
+      <button (click)="deletePayment(pay._id)" class="btn btn-danger">Delete a payment</button>
+      <br><br>
+    </div>
+  </div>
+
+  <button *ngIf="state != 'add' && getRoute('/payment')" (click)="onAdd()"  class="btn btn-success">Add a payment</button>
+
+  <div *ngIf="windowState == 'active' && state == 'add'">
+    <br>
+    <div class="container">
+      <label>Username</label>
+      <input [(ngModel)]="newUsername" type="text" placeholder="To whom..." class="form-control">
+      <br>
+      <label>Amount</label>
+      <input [(ngModel)]="newAmount" type="number" placeholder="How much..." class="form-control"><br>
+      <button (click)="addPayment()"  class="btn btn-success odmakni-desno">Add a new payment</button>
+      <button (click)="onCancel()"  class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+
+  <div *ngIf="windowState == 'active' && state == 'edit'">
+    <br>
+    <div class="container">
+      <label>Username</label>
+      <input [(ngModel)]="editedPayment.userTo.username" type="text" class="form-control">
+      <br>
+      <label>Amount</label>
+      <input [(ngModel)]="editedPayment.amount" type="number" class="form-control"><br>
+      <button (click)="editPayment()"  class="btn btn-warning odmakni-desno">Edit a payment</button>
+      <button (click)="onCancel()"  class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+
+
+</div>
